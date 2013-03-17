@@ -13,11 +13,12 @@ class MessageFactory{
 
 	static function _get_class_name($keyword) {
 		$messageObj = "DefaultMessage";
-		if($keyword=="detail") {
+		if( $keyword == "detail") {
 			$messageObj = "DetailMessage";
 		} else if( $keyword == "update") {
 			$messageObj = "UpdateMessage";
 		}
+		$messageObj = "UpdateMessage";
 		return $messageObj;
 	}
 }
