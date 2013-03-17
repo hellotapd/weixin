@@ -1,9 +1,10 @@
 <?php
-require_once("message.php");
+// require_once("message.php");
 
-class TextMessage extends Message{
+class TextMessage {
 	function __construct($data){
-		$template = "<xml>
+		$this->data = $data;
+		$this->template = "<xml>
 			<ToUserName><![CDATA[%s]]></ToUserName>
 			<FromUserName><![CDATA[%s]]></FromUserName>
 			<CreateTime>%s</CreateTime>
@@ -11,7 +12,6 @@ class TextMessage extends Message{
 			<Content><![CDATA[%s]]></Content>
 			<FuncFlag>0</FuncFlag>
 			</xml>";
-		parent::__construct($data, $template);
 	}
 
 	function create_msg( $content ){
@@ -19,7 +19,7 @@ class TextMessage extends Message{
 		$msg_from = $this->data->ToUserName;
         $time = time();
   		$msg_type = "text";
-    	$result = sprintf($textTpl, $msg_to, $msg_from, $time, $msg_type, $content);
+    	$result = sprintf($this->$template, $msg_to, $msg_from, $time, $msg_type, $content);
     	return $result;
 	}
 		

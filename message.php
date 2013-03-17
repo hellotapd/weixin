@@ -20,9 +20,9 @@ class Message{
 		return $this->template;
 	}
 
-	function create_msg() {
-		#do somethine here
-	}
+	// function create_msg() {
+	// 	#do somethine here
+	// }
 }
 
 

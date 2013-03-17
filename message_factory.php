@@ -9,7 +9,7 @@ class MessageFactory{
 	}
 
 
-	private static function _get_class_name($keyword) {
+	static function _get_class_name($keyword) {
 		$messageObj = null;
 		if($keyword=="detail") {
 			$messageObj = "DetailMessage";
