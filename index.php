@@ -1,6 +1,4 @@
 <?php
-require_once("safe.php");
-require_once("message/message_factory.php");
 require_once("core.php");
 
 // if(Safe::vaild()) {
@@ -13,6 +11,7 @@ require_once("core.php");
      </xml>";
 	$post_str = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] :$template;
 	
+	Log::access_log($post_str);
 	$msgObj = MessageFactory::init($post_str);
 	$respone_str  = $msgObj->get_msg();
 	echo $respone_str;
