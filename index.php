@@ -1,6 +1,6 @@
 <?php
 require_once("safe.php");
-require_once("message_factory.php");
+require_once("message/message_factory.php");
 require_once("core.php");
 
 // if(Safe::vaild()) {
