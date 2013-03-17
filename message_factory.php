@@ -15,7 +15,7 @@ class MessageFactory{
 		$messageObj = "DefaultMessage";
 		if($keyword=="detail") {
 			$messageObj = "DetailMessage";
-		} else if( $keyword == "update git") {
+		} else if( $keyword == "update") {
 			$messageObj = "UpdateMessage";
 		}
 		return $messageObj;
