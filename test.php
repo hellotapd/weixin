@@ -6,7 +6,7 @@ $test_str = "<xml>
        <FromUserName><![CDATA[fromUser]]></FromUserName>
        <CreateTime>1348831860</CreateTime>
        <MsgType><![CDATA[text]]></MsgType>
-       <Content><![CDATA[this is a test]]></Content>
+       <Content><![CDATA[detail]]></Content>
      </xml>";
 
 

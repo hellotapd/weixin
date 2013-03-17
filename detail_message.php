@@ -2,8 +2,8 @@
 require_once("text_message.php");
 
 class DetailMessage extends TextMessage{
-	function __contruct($data){ 
-		parent::__contruct($data);
+	function __construct($data){ 
+		parent::__construct($data);
 	}
 
 	function get_content() {

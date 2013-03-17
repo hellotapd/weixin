@@ -2,7 +2,7 @@
 require_once("message.php");
 
 class TextMessage extends Message{
-	function __contruct($data){
+	function __construct($data){
 		$template = "<xml>
 			<ToUserName><![CDATA[%s]]></ToUserName>
 			<FromUserName><![CDATA[%s]]></FromUserName>
@@ -11,7 +11,7 @@ class TextMessage extends Message{
 			<Content><![CDATA[%s]]></Content>
 			<FuncFlag>0</FuncFlag>
 			</xml>";
-		parent::__contruct($data, $template);
+		parent::__construct($data, $template);
 	}
 
 	function create_msg( $content ){

@@ -7,7 +7,7 @@ class Message{
 	var $data;
 	var $template;
 
-	function __contruct( $data, $template ){
+	function __construct( $data, $template ){
 		$this->$data = $data;
 		$this->template = $template;
 	}
