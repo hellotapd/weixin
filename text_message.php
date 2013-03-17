@@ -29,7 +29,7 @@ class TextMessage extends Message{
 	}
 
 	#need children class do something here
-	function get_content() ;
+	function get_content(){}
 
 
 }

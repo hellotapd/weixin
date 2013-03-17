@@ -12,6 +12,7 @@ $test_str = "<xml>
 
 $msgObj = MessageFactory::init($test_str);
 $return  = $msgObj->get_msg();
+var_dump($return);
 
 
 ?>
