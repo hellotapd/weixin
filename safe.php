@@ -7,7 +7,7 @@ class Safe{
 	 */
 	static function vaild() {
 		$check = false;
-		$post_str = $GLOBALS["HTTP_RAW_POST_DATA"];
+		$post_str = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] : null;
 		if( !empty($post_str) ) {
 			$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 			$keyword = trim($postObj->Content);

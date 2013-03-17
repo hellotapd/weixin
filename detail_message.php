@@ -7,7 +7,11 @@ class DetailMessage extends TextMessage{
 	}
 
 	function get_content() {
-		return "this is from detail_message";
+		$current_user = $this->current_user();
+		$system_user = $this->system_user();
+		$keyword = $this->keyword();
+		$content = "current_user:[{$current_user}]; system_user:[{$system_user}];keyword:[{$keyword}]";
+		return $content;
 	}
 
 }
