@@ -1,7 +1,7 @@
 <?php
 require_once("message.php");
 
-abstract class TextMessage extends Message{
+class TextMessage extends Message{
 	function __contruct($data){
 		$template = "<xml>
 			<ToUserName><![CDATA[%s]]></ToUserName>
@@ -29,7 +29,7 @@ abstract class TextMessage extends Message{
 	}
 
 	#need children class do something here
-	abstract function get_content() ;
+	function get_content() ;
 
 
 }

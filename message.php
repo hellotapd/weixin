@@ -3,7 +3,7 @@
 /**
  *消息回复 父类
  */
-abstract class Message{
+class Message{
 	var $data;
 	var $template;
 
