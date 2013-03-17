@@ -8,7 +8,7 @@ class Message{
 	var $template;
 
 	function __construct( $data, $template ){
-		$this->$data = $data;
+		$this->data = $data;
 		$this->template = $template;
 	}
 
@@ -20,9 +20,17 @@ class Message{
 		return $this->template;
 	}
 
-	// function create_msg() {
-	// 	#do somethine here
-	// }
+	function current_user() {
+		return $this->data->FromUserName;
+	}
+
+	function system_user() {
+		return $this->data->ToUserName;
+	}
+
+	function get_keyword() {
+		return $this->data->Content;
+	}
 }
 
 
