@@ -2,19 +2,18 @@
 require_once("text_message.php");
 
 class UpdateMessage extends TextMessage{
+	var $file_dir = "/var/www/weixin/";
+	var $git_remote_name = "origin";
 	function __construct($data){ 
 		parent::__construct($data);
 	}
 
 	function get_content() {
 		if($this->vaild()) {
-			
+			return $this->_update_git();
+		} else {
+			return "sorry!! You don't have the authority required. Please contact Kerwin if need is";
 		}
-		$current_user = $this->current_user();
-		$system_user = $this->system_user();
-		$keyword = $this->keyword();
-		$content = "current_user:[{$current_user}]; system_user:[{$system_user}];keyword:[{$keyword}]";
-		return $content;
 	}
 
 	private function vaild(){
@@ -23,6 +22,11 @@ class UpdateMessage extends TextMessage{
 			"oVdr7jqVL5qD3NdnueKTmN2toAqc"	//kerwin
 			);
 		return in_array($current_user,$allow_user);
+	}
+
+	private function _update_git() {
+		$update_command = "cd {$this->file_dir} && git pull {$git_remote_name}";
+		return system($update_command);
 	}
 
 }

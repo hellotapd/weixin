@@ -9,7 +9,7 @@ require_once("core.php");
        <FromUserName><![CDATA[fromUser]]></FromUserName>
        <CreateTime>1348831860</CreateTime>
        <MsgType><![CDATA[text]]></MsgType>
-       <Content><![CDATA[detail]]></Content>
+       <Content><![CDATA[update]]></Content>
      </xml>";
 	$post_str = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] :$template;
 	
