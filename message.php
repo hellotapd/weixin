@@ -28,7 +28,7 @@ class Message{
 		return $this->data->ToUserName;
 	}
 
-	function get_keyword() {
+	function keyword() {
 		return $this->data->Content;
 	}
 }

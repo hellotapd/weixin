@@ -1,5 +1,6 @@
 <?php
 require_once("detail_message.php");
+require_once("default_message.php");
 class MessageFactory{
 	static function init($post_data) {
 		$postObj = simplexml_load_string($post_data, 'SimpleXMLElement', LIBXML_NOCDATA);
@@ -10,7 +11,7 @@ class MessageFactory{
 
 
 	static function _get_class_name($keyword) {
-		$messageObj = null;
+		$messageObj = "DefaultMessage";
 		if($keyword=="detail") {
 			$messageObj = "DetailMessage";
 		}
