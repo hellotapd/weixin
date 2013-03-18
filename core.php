@@ -1,7 +1,7 @@
 <?php
 //define your token
 define("TOKEN", "hellotapd1357");
-define("ISDEV",true);
+define("ISDEV",false);
 
 //require file
 require_once("safe.php");
