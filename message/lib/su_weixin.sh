@@ -5,5 +5,5 @@ sleep 0.5
 send "weixin@tapD\r"
 expect "$"
 sleep 0.5
-send "/usr/bin/sh /var/www/weixin/message/lib/update_git.sh\r"
+send "/bin/sh /var/www/weixin/message/lib/update_git.sh\r"
 exit
