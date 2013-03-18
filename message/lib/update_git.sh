@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd /var/www/weixin
-/usr/local/git up 2>&1
+/usr/local/git up > /tmp/update_git.log
 exit
