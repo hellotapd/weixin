@@ -25,7 +25,7 @@ class UpdateMessage extends TextMessage{
 	}
 
 	private function _update_git() {
-		$update_command = "cd {$this->file_dir} && git pull {$this->git_remote_name}";
+		$update_command = "cd {$this->file_dir} && git pull {$this->git_remote_name} 2>&1";
 		return system($update_command);
 	}
 
