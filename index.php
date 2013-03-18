@@ -14,6 +14,7 @@ require_once("core.php");
 	Log::access_log($post_str);
 	$msgObj = MessageFactory::init($post_str);
 	$respone_str  = $msgObj->get_msg();
+	Log::respone_log($respone_str);
 	echo $respone_str;
 // } 
 
