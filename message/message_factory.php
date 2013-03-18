@@ -18,7 +18,6 @@ class MessageFactory{
 		} else if( $keyword == "update") {
 			$messageObj = "UpdateMessage";
 		}
-		$messageObj = "UpdateMessage";
 		return $messageObj;
 	}
 }
