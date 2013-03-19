@@ -1,0 +1,71 @@
+<xml>
+			<ToUserName><![CDATA[fromUser]]></ToUserName>
+			<FromUserName><![CDATA[toUser]]></FromUserName>
+			<CreateTime>1363604290</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[sorry!! You don't have the authority required. Please contact Kerwin if need is]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jqVL5qD3NdnueKTmN2toAqc]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363604333</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jqVL5qD3NdnueKTmN2toAqc]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363604456</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jqVL5qD3NdnueKTmN2toAqc,the time is 2013-03-18, Welcome to tapd~~your keyword is "y"~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jqVL5qD3NdnueKTmN2toAqc]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363626751</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[and the repository exists.]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jhSoVSHNFD-pc4-YhKq9B38]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363688808</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jhSoVSHNFD-pc4-YhKq9B38,the time is 2013-03-19, Welcome to tapd~~your keyword is "haha"~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jupsvKqVWY62IgFtwluc7A4]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363688810</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jupsvKqVWY62IgFtwluc7A4,the time is 2013-03-19, Welcome to tapd~~your keyword is "!"~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jui5-u_jh7vsDXU-LhPBX2c]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363688815</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jui5-u_jh7vsDXU-LhPBX2c,the time is 2013-03-19, Welcome to tapd~~your keyword is "1"~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jupsvKqVWY62IgFtwluc7A4]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363688897</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jupsvKqVWY62IgFtwluc7A4,the time is 2013-03-19, Welcome to tapd~~your keyword is "Detail"~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jhSoVSHNFD-pc4-YhKq9B38]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363690612</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jhSoVSHNFD-pc4-YhKq9B38,the time is 2013-03-19, Welcome to tapd~~your keyword is ""~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml><xml>
+			<ToUserName><![CDATA[oVdr7jqVL5qD3NdnueKTmN2toAqc]]></ToUserName>
+			<FromUserName><![CDATA[gh_9982d238970d]]></FromUserName>
+			<CreateTime>1363690667</CreateTime>
+			<MsgType><![CDATA[text]]></MsgType>
+			<Content><![CDATA[Hello oVdr7jqVL5qD3NdnueKTmN2toAqc,the time is 2013-03-19, Welcome to tapd~~your keyword is ""~ ]]></Content>
+			<FuncFlag>0</FuncFlag>
+			</xml>
