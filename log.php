@@ -1,5 +1,9 @@
 <?php
 require_once("core.php");
+
+/**
+ * log 文件
+ */
 class Log{
 	static function access_log( $postStr ) {
 		$dir = LOGDIR."access.log";
