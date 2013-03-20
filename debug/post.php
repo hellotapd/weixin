@@ -8,10 +8,15 @@ header("content-type:text/html;charset=utf-8");
 <title>debug</title>
 </head>
 <body>
-<form action="http://weixin.ifxoxo.com" method="post">
+<form action="http://weixin.ifxoxo.com/debug/post.php" method="post">
 输入内容<br />
 <textarea name="content" cols="40" rows="10"></textarea>
 <input type="submit" value="submit" />
 </form>
+<br><br>
+<?php
+var_dump($_POST);
+
+?>
 </body>
 </html>
