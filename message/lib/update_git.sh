@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "diaoyong sh"
 cd /var/www/weixin
-/usr/local/git up > /tmp/update_git.log
+/usr/local/git/bin/git pull master 
 exit
