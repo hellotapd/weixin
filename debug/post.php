@@ -1,4 +1,6 @@
 <?php
+require_once('post_message.php');
+
 header("content-type:text/html;charset=utf-8");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,8 +17,22 @@ header("content-type:text/html;charset=utf-8");
 </form>
 <br><br>
 <?php
-var_dump($_POST);
+if(!empty($_POST)) {
+ $template = "<xml>
+       <ToUserName><![CDATA[toUser]]></ToUserName>
+       <FromUserName><![CDATA[fromUser]]></FromUserName>
+       <CreateTime>1348831860</CreateTime>
+       <MsgType><![CDATA[text]]></MsgType>
+       <Content><![CDATA[".$_POST['content']."]]></Content>
+     </xml>";
 
+echo 'input is:';
+var_dump($_POST['content']);
+echo '<br>';
+$send_message = new SendMessage();
+$ret = $send_message->send_message($template);
+echo 'the return is :'.(string)$ret->Content;
+}
 ?>
 </body>
 </html>
