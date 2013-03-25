@@ -30,7 +30,7 @@ classs TapdLog{
 	private function __construct(){
 		if(!file_exists($path_of_log_file)){
 			// trigger_error("A custom error has been triggered");
-			$fh = fopen("test.txt","w");
+			$fh = fopen($path_of_log_file,"rw");
     		fclose($fh);
 		}
 	}
