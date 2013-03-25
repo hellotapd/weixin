@@ -5,7 +5,7 @@
  * @author ruirayli
  */
 
-classs TapdLog{
+class TapdLog{
 
 	static private $log_instance = null;
 
