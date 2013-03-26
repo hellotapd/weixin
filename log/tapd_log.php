@@ -23,23 +23,15 @@ class TapdLog{
 
 	private $log_file = null;
 
-	private $path_of_log_file = 'log/tapd.log';
-
-	private $limited_of_log_file = 1099511627776;
-
 	/**
  	  * todo: 日志文件若不存在，创建；若超过文件大小限制，归档并创建
       * @author ruirayli
       */
 	private function __construct(){ 
-			// trigger_error("A custom error has been triggered");
-		$size = filesize($this->path_of_log_file);
-
-		echo $size . "<br>";
-		$fh = fopen($this->path_of_log_file,"a+");  			
-		if(filesize($this->path_of_log_file) > $this->limited_of_log_file){
+		$fh = fopen(LOG_PATH,"a+");  			
+		if(filesize(LOG_PATH) > LOG_FILE_SIZE_LIMITED){
 			fclose($fh);
-			rename($this->path_of_log_file, $this->path_of_log_file . '_' . date('Ymd'));
+			rename(LOG_PATH, LOG_PATH . '_' . date('Ymd'));
 		}else{
 			fclose($fh);
 		}
@@ -61,13 +53,12 @@ class TapdLog{
 
 	public function write_log($content, $level = 0){		
 		$format_content = $this->_format_log_content($content, $level);
-		file_put_contents($this->path_of_log_file, $format_content, FILE_APPEND);
+		file_put_contents(LOG_PATH, $format_content, FILE_APPEND);
 	}
 
 	private function _format_log_content($content, $level){
 		$trace = debug_backtrace(false);
 		$LF = (DIRECTORY_SEPARATOR=='\\') ? "\r\n" : "\n";
-		var_dump($trace );
 		if(isset($trace[0]['file']) && isset($trace[0]['line'])){
 			$file = $trace[0]['file'];
 			$line = $trace[0]['line'];
