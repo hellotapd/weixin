@@ -62,6 +62,31 @@
 			}
 		}
 
+
+	    /**
+	     * 创建XML格式的response    
+	     * @fromUsername - 消息发送方微信号    
+	     * @toUsername - 消息接收方微信号    
+	     * @contentStr - 需要发送的文本内容    
+	     * @return xml    
+	     */     
+	    public function creat_xml_response($contentStr)   
+	    {   
+	        $msgType = "text";   
+	        $time = time();   
+	        $textTpl = "<xml>
+	                            <ToUserName><![CDATA[%s]]></ToUserName>  
+	                            <FromUserName><![CDATA[%s]]></FromUserName>  
+	                            <CreateTime>%s</CreateTime>  
+	                            <MsgType><![CDATA[%s]]></MsgType>  
+	                            <Content><![CDATA[%s]]></Content>  
+	                            <FuncFlag>0</FuncFlag>  
+	                            </xml>";   
+	  
+	        $resultStr = sprintf($textTpl, $this->fromUsername, $this->toUsername, $time, $msgType, $contentStr);   
+	        return $resultStr;   
+	  
+	    }   
 	   /**
 	     * 城市实时天气搜索    
 	     * @作者：@CBD社区网    
