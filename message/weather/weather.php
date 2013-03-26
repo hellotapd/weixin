@@ -74,6 +74,6 @@
 		$city = $_GET['city']; 
 	}
 	$weather = new Weather();
-	$city_weather =  $weather->inquire_city_weather($city);
+	$city_weather =  $weather->inquire_city_weather('qingdao');
 	echo $city_weather;
 ?>
