@@ -23,16 +23,35 @@ class TapdLog{
 
 	private $log_file = null;
 
-	private $path_of_log_file = 'tapd.log';
+	private $path_of_log_file = 'log/tapd.log';
 
-	private $limited_of_log_file = 100;
+	private $limited_of_log_file = 1099511627776;
 
-	private function __construct(){
-		if(!file_exists($path_of_log_file)){
+	/**
+ 	  * todo: 日志文件若不存在，创建；若超过文件大小限制，归档并创建
+      * @author ruirayli
+      */
+	private function __construct(){ 
 			// trigger_error("A custom error has been triggered");
-			$fh = fopen($path_of_log_file,"rw");
-    		fclose($fh);
+			ini_set ("display_errors", "1");
+
+			error_reporting(E_ALL);
+			
+		$size = filesize('tapd.log');
+
+		ini_set ("display_errors", "1");
+
+			error_reporting(E_ALL);
+
+		echo $size . "<br>";
+		$fh = fopen($this->path_of_log_file,"a+");  			
+		if(filesize($this->path_of_log_file) > $this->limited_of_log_file){
+			fclose($fh);
+			rename($this->path_of_log_file, $this->path_of_log_file . '_' . date('Ymd'));
+		}else{
+			fclose($fh);
 		}
+		
 	}
 
 	private function __clone(){}
@@ -48,11 +67,21 @@ class TapdLog{
 		return self::$log_instance;
 	}
 
-	public function write_log(){
-
+	public function write_log($content, $level = 0){		
+		$format_content = $this->_format_log_content($content, $level);
+		file_put_contents($this->path_of_log_file, $format_content, FILE_APPEND);
 	}
 
-
-
-
+	private function _format_log_content($content, $level){
+		$trace = debug_backtrace(false);
+		$LF = (DIRECTORY_SEPARATOR=='\\') ? "\r\n" : '\n';
+		var_dump($trace );
+		if(isset($trace[0]['file']) && isset($trace[0]['line'])){
+			$file = $trace[0]['file'];
+			$line = $trace[0]['line'];
+			return date('Ymd H:i:s') . " Level:$level " .  " File:$file Line:$line " . $content . $LF;
+		}else{
+			return date('Ymd H:i:s') . " Level:$level " . $content . $LF;
+		}
+	}
 }

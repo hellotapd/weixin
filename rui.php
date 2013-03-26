@@ -1,5 +1,5 @@
 <?php
 	require_once("core.php");
-	echo '123';
-	TapdLog::instance()->write_log();
+	TapdLog::instance()->write_log('1234569999');
+	TapdLog::instance()->write_log('ddddddddddddd');
 	?>
