@@ -66,7 +66,7 @@ class TapdLog{
 
 	private function _format_log_content($content, $level){
 		$trace = debug_backtrace(false);
-		$LF = (DIRECTORY_SEPARATOR=='\\') ? "\r\n" : '\n';
+		$LF = (DIRECTORY_SEPARATOR=='\\') ? "\r\n" : "\n";
 		var_dump($trace );
 		if(isset($trace[0]['file']) && isset($trace[0]['line'])){
 			$file = $trace[0]['file'];
