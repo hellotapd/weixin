@@ -29,30 +29,30 @@
 	        $result = explode('.', $result['5']);   
 	        $citynum = $result['0'];   
 	        if($citynum != 101010100){   
-	        $weatherurl = "http://m.weather.com.cn/data/" . $citynum . ".html";   
-	        $weatherjson = file_get_contents($weatherurl);   
-	        $weatherarray = json_decode($weatherjson, true);   
-	        $weatherinfo = $weatherarray['weatherinfo'];   
-	        $contentTpl = "#这里是%s#(%s)
-				%s%s  
-				%s时发布的天气预报：  
-				今天天气：%s  
-				%s，%s  
-				穿衣指数：%s  
-				紫外线指数：%s  
-				洗车指数：%s  
-				明天天气：%s  
-				%s，%s  
-				后天天气：%s  
-				%s，%s";   
-	        $contentStr = sprintf($contentTpl, $weatherinfo['city'], $weatherinfo['city_en'],   
-	            $weatherinfo['date_y'], $weatherinfo['week'], $weatherinfo['fchh'], $weatherinfo['temp1'],   
-	            $weatherinfo['weather1'], $weatherinfo['wind1'], $weatherinfo['index_d'], $weatherinfo['index_uv'],   
-	            $weatherinfo['index_xc'], $weatherinfo['temp2'], $weatherinfo['weather2'], $weatherinfo['wind2'],   
-	            $weatherinfo['temp3'], $weatherinfo['weather3'], $weatherinfo['wind3']);                   
-	       // $resultStr = $this->creat_xml_response($contentStr);   
-	        $resultStr = $contentStr;  
-	        return $resultStr;   
+		        $weatherurl = "http://m.weather.com.cn/data/" . $citynum . ".html";   
+		        $weatherjson = file_get_contents($weatherurl);   
+		        $weatherarray = json_decode($weatherjson, true);   
+		        $weatherinfo = $weatherarray['weatherinfo'];   
+		        $contentTpl = "#这里是%s#(%s)
+					%s%s  
+					%s时发布的天气预报：  
+					今天天气：%s  
+					%s，%s  
+					穿衣指数：%s  
+					紫外线指数：%s  
+					洗车指数：%s  
+					明天天气：%s  
+					%s，%s  
+					后天天气：%s  
+					%s，%s";   
+		        $contentStr = sprintf($contentTpl, $weatherinfo['city'], $weatherinfo['city_en'],   
+		            $weatherinfo['date_y'], $weatherinfo['week'], $weatherinfo['fchh'], $weatherinfo['temp1'],   
+		            $weatherinfo['weather1'], $weatherinfo['wind1'], $weatherinfo['index_d'], $weatherinfo['index_uv'],   
+		            $weatherinfo['index_xc'], $weatherinfo['temp2'], $weatherinfo['weather2'], $weatherinfo['wind2'],   
+		            $weatherinfo['temp3'], $weatherinfo['weather3'], $weatherinfo['wind3']);                   
+		       // $resultStr = $this->creat_xml_response($contentStr);   
+		        $resultStr = $contentStr;  
+		        return $resultStr;   
 	        }else{   
 	            $errorMsg = "暂时还不能从你发送的消息中判断它是哪一座城市哦。";   
 	           // $resultStr = $this->creat_xml_response($errorMsg);  
@@ -70,10 +70,10 @@
 	}
 
 	$city = 'beijing';
-	if(!empty($_GET['city'])){
-		$city = $_GET['city']; 
-	}
+	// if(!empty($_GET['city'])){
+	// 	$city = $_GET['city']; 
+	// }
 	$weather = new Weather();
-	$city_weather =  $weather->inquire_city_weather('qingdao');
+	$city_weather =  $weather->inquire_city_weather($city);
 	echo $city_weather;
 ?>
