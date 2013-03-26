@@ -72,6 +72,7 @@
 	    {   
 	  		$post_data = array();   
 	        $post_data['city'] = $city;   
+	        echo $city;
 	        $post_data['submit'] = "submit";   
 	        $url = 'http://search.weather.com.cn/wap/search.php';   
 	        $o = "";   
