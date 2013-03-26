@@ -1,97 +1,9 @@
 <?php
 	echo 'Weather'; 
 	class Weather {
-		function curl_file_get_contents($durl){
-			 // $f = new SaeFetchurl();
-			 //  $content = $f->fetch($durl);
-			 //  if($f->errno() == 0)  $r=$content;
-			 //  else $r=$f->errmsg();
-			$r = file_get_contents($durl);
-			echo $r;
-		   return $r;
-		}
-		function wtrimall($str)//删除空格
-		{
-			$qian=array(" ","　","\t","\n","\r");$hou=array("","","","","");
-			return str_replace($qian,$hou,$str);	
-		}
-		function wchangearray($arr)//对数组进行键值排序
-		{
-			foreach($arr as $v)
-			{if(!trim($v))continue;
-			$value[]=trim($v);}return $value;
-		}
-		function getweather($city,$data='data.txt')//获取天气预报内容
-		{
-			$urlarr=unserialize(file_get_contents($data));
-			if($urlarr[$city])
-			{
-				$url = $urlarr[$city];$text=$city;
-				$lines_string = $this->curl_file_get_contents($url);
-				$lines_string = explode("<!--day",$lines_string);
-				if(!$lines_string[1]){return "无法获取到该城市的天气信息!";exit;}
-				$lines_string_3=explode("未来",$lines_string[3]);
-				$lines_array =array(str_replace('1-->','',$lines_string[1]),str_replace('2-->','',$lines_string[2]),str_replace('3-->','',$lines_string_3[0]));
-				for($i=0;$i< count($lines_array); $i ++)
-				{
-					$tiqian=array("℃","高温","低温");$tihou=array("度","","");$nowarray=str_replace($tiqian,$tihou,strip_tags($lines_array[$i]));
-					$datearray=explode("日",$nowarray);$wtext[$i]=trim($datearray[0])."日";//获取日期
-					$weather=explode("白天",$nowarray);$weather=explode("夜间",$weather[1]);
-					$baiarr=wchangearray(explode("\r",$weather[0]));//白天天气
-					$yearr=wchangearray(explode("\r",$weather[1]));//夜间天气
-					if($baiarr[0]==$yearr[0]){$wtext[$i].=$baiarr[0];}else{$wtext[$i].=$baiarr[0]."转".$yearr[0];}//将天气添加到返回值里
-					$wtext[$i].=$baiarr[1]."到".$yearr[1];//将气温添加到返回值里
-					if($baiarr[2]==$yearr[2]){$wtext[$i].=$baiarr[2];}else{$wtext[$i].=str_replace("风","",$baiarr[2]."转".$yearr[2]);$wtext[$i].="风";}//将风向添加到返回值里
-					if($baiarr[3]!="微风"){$wtext[$i].=$baiarr[3];}//将风力添加到返回值
-				}
-				return $text.implode("",$wtext);
-			}else{
-				return "无法获取到该城市的天气信息!";
-			}
-		}
-		function wtext($city)
-		{
-			$date=date("Ymd");$arr=array(1);$weather_txt="saemc://".$date.".txt";$old=array();
-			if(!file_exists($weather_txt)){file_put_contents($weather_txt,serialize($arr));}
-			$old=unserialize(file_get_contents($weather_txt));
-			if($old['city'] && strlen($old[$city])>30){return $old['value'];}
-			else{
-				$new=getweather($city);$newarr=array($city=>$new);
-				file_put_contents($weather_txt,serialize(array_unique(array_merge($old,$newarr))));
-				return $new;
-			}
-		}
-
-
-	    /**
-	     * 创建XML格式的response    
-	     * @fromUsername - 消息发送方微信号    
-	     * @toUsername - 消息接收方微信号    
-	     * @contentStr - 需要发送的文本内容    
-	     * @return xml    
-	     */     
-	    public function creat_xml_response($contentStr)   
-	    {   
-	        $msgType = "text";   
-	        $time = time();   
-	        $textTpl = "<xml>
-	                            <ToUserName><![CDATA[%s]]></ToUserName>  
-	                            <FromUserName><![CDATA[%s]]></FromUserName>  
-	                            <CreateTime>%s</CreateTime>  
-	                            <MsgType><![CDATA[%s]]></MsgType>  
-	                            <Content><![CDATA[%s]]></Content>  
-	                            <FuncFlag>0</FuncFlag>  
-	                            </xml>";   
-	  
-	        $resultStr = sprintf($textTpl, $this->fromUsername, $this->toUsername, $time, $msgType, $contentStr);   
-	        return $resultStr;   
-	  
-	    }   
 	   /**
 	     * 城市实时天气搜索    
-	     * @作者：@CBD社区网    
-	     * @city 地区名称、电话区号、城市拼音    
-	     * @return xml    
+	     * @city 地区名称、电话区号、城市拼音      
 	    */     
 	   public function inquire_city_weather($city)   
 	    {   
@@ -138,17 +50,30 @@
 	            $weatherinfo['weather1'], $weatherinfo['wind1'], $weatherinfo['index_d'], $weatherinfo['index_uv'],   
 	            $weatherinfo['index_xc'], $weatherinfo['temp2'], $weatherinfo['weather2'], $weatherinfo['wind2'],   
 	            $weatherinfo['temp3'], $weatherinfo['weather3'], $weatherinfo['wind3']);                   
-	        $resultStr = $contentStr;   
+	       // $resultStr = $this->creat_xml_response($contentStr);   
+	        $resultStr = $contentStr;  
 	        return $resultStr;   
 	        }else{   
 	            $errorMsg = "暂时还不能从你发送的消息中判断它是哪一座城市哦。";   
-	            $resultStr = $this->creat_xml_response($errorMsg);   
+	           // $resultStr = $this->creat_xml_response($errorMsg);  
+	            $resultStr = $errorMsg;    
 	            return $resultStr;   
 	        }   
-	    }   
+	    } 
+	    /**
+	     * 获取城市    
+	    */    
+
+	    function get_city_name(){
+
+		}  
+	}
+
+	$city = 'beijing';
+	if(!empty($_GET['city'])){
+		$city = $_GET['city']; 
 	}
 	$weather = new Weather();
-	$city_weather =  $weather->inquire_city_weather('qingdao');
+	$city_weather =  $weather->inquire_city_weather($city);
 	echo $city_weather;
-
 ?>
