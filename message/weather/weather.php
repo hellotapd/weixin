@@ -138,7 +138,7 @@
 	            $weatherinfo['weather1'], $weatherinfo['wind1'], $weatherinfo['index_d'], $weatherinfo['index_uv'],   
 	            $weatherinfo['index_xc'], $weatherinfo['temp2'], $weatherinfo['weather2'], $weatherinfo['wind2'],   
 	            $weatherinfo['temp3'], $weatherinfo['weather3'], $weatherinfo['wind3']);                   
-	        $resultStr = $this->creat_xml_response($contentStr);   
+	        $resultStr = $contentStr;   
 	        return $resultStr;   
 	        }else{   
 	            $errorMsg = "暂时还不能从你发送的消息中判断它是哪一座城市哦。";   
