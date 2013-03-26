@@ -33,15 +33,7 @@ class TapdLog{
       */
 	private function __construct(){ 
 			// trigger_error("A custom error has been triggered");
-			ini_set ("display_errors", "1");
-
-			error_reporting(E_ALL);
-			
-		$size = filesize('tapd.log');
-
-		ini_set ("display_errors", "1");
-
-			error_reporting(E_ALL);
+		$size = filesize($this->path_of_log_file);
 
 		echo $size . "<br>";
 		$fh = fopen($this->path_of_log_file,"a+");  			
