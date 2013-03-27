@@ -1,7 +1,5 @@
 <?php
-require_once("text_message.php");
-
-class DetailMessage extends TextMessage{
+class TextDetail extends TextMessage{
 	function __construct($data){ 
 		parent::__construct($data);
 	}

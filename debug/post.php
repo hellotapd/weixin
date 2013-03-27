@@ -31,7 +31,8 @@ echo '<br>';
 $send_message = new SendMessage();
 $ret = $send_message->send_message($template);
 echo 'the return is :<br>';
-var_dump((string)$ret->Content);
+$ret_string = htmlspecialchars($ret);
+debug($ret_string);
 }
 ?>
 </body>

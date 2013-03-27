@@ -1,7 +1,5 @@
 <?php
-require_once("text_message.php");
-
-class UpdateMessage extends TextMessage{
+class TextUpdate extends TextMessage{
 	var $file_dir = "/var/www/weixin/";
 	var $git_remote_name = "origin";
 	function __construct($data){ 

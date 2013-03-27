@@ -22,8 +22,10 @@ class SendMessage{
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); 
 			curl_setopt($ch, CURLOPT_TIMEOUT, 30); 
 			$curl_result = curl_exec($ch);
-			$xml = simplexml_load_string($curl_result);
-			return $xml;
+			return $curl_result;
+			// $xml = simplexml_load_string($curl_result);
+			// var_dump($xml->Content);
+			// return $xml;
 		}
 
 

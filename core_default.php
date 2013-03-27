@@ -2,18 +2,12 @@
 //define your token
 define("TOKEN", "hellotapd1357");
 define("ISDEV",true);
+define("DEBUG",1);
 
-//require file
-require_once("safe.php");
-require_once("message/message_factory.php");
-require_once("log.php");
-require_once("log/tapd_log.php");
 
 if(ISDEV) {
-	define("LOGDIR","F:\\www\\weixin\\log\\");
 	define("BASE_PATH","http://localhost/new_weixin/");
 } else {
-	define("LOGDIR","/var/www/weixin/log/");
 	define("BASE_PATH","http://weixin.ifxoxo.com/");
 }
 
@@ -55,4 +49,14 @@ define("LOG_PATH", ROOT . DS . 'log' . DS . 'tapd.log');
  */
 define("LOG_FILE_SIZE_LIMITED", 1099511627776);
 
+
+
+//require file
+require_once("safe.php");
+require_once("message/message_factory.php");
+require_once("message/pic_message.php");
+require_once("message/text_message.php");
+require_once("log.php");
+require_once("log/tapd_log.php");
+require_once("basics.php");
 ?>
