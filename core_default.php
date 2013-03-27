@@ -50,6 +50,11 @@ define("LOG_PATH", ROOT . DS . 'log' . DS . 'tapd.log');
 define("LOG_FILE_SIZE_LIMITED", 1099511627776);
 
 
+/**
+ *
+ * 访问日志存放路径
+ */
+define("LOGDIR",ROOT.DS."log".DS);
 
 //require file
 require_once("safe.php");

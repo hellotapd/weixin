@@ -26,7 +26,7 @@ function loadMessage($message_name) {
 		$ret = getClassDir($message_name);
 		$dir = $ret['dir'];
 		$file_name = $ret['file_name'];
-		$class_dir = ROOT . "message". DS . $dir . DS. $file_name;
+		$class_dir = ROOT .DS. "message". DS . $dir . DS. $file_name;
 		if( file_exists($class_dir)) {
 			require_once($class_dir);
 		} else {
