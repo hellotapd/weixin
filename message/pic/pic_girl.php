@@ -7,7 +7,7 @@ class PicGirl extends PicMessage{
 	function get_content() {
 		$content = array();
 		for ($i=1; $i < 4; $i++) { 
-			$content[] = $this->_get_one_item("test".$i."jpg");	
+			$content[] = $this->_get_one_item("test".$i.".jpg");	
 		}
 		return $content;	
 	}
