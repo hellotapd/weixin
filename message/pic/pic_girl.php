@@ -21,6 +21,8 @@ class PicGirl extends PicMessage{
 			);
 	}
 
+	function show_pic(){}
+
 }
 
 
