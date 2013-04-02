@@ -6,6 +6,7 @@ class Safe{
 	 * @return bool
 	 */
 	static function vaild() {
+		if(!self::check_signature()){ return false;}
 		$check = false;
 		$post_str = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] : null;
 		if( !empty($post_str) ) {
@@ -41,6 +42,7 @@ class Safe{
 
 	static function check_signature()
 	{
+		
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce = $_GET["nonce"];	
