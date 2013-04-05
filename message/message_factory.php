@@ -18,9 +18,13 @@ class MessageFactory{
 			$messageObj = "TextUpdate";
 		} else if( $keyword == 'girl') {
 			$messageObj = "PicGirl";
+		} else if( strpos($keyword, "笑话") ||strpos($keyword, "糗事") || strpos($keyword, "xh") !== FALSE ) {
+			$messageObj = "TextQiushi";
 		}
 		return $messageObj;
 	}
+
+
 }
 
 ?>

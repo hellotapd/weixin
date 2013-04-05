@@ -56,6 +56,11 @@ define("LOG_FILE_SIZE_LIMITED", 1099511627776);
  */
 define("LOGDIR",ROOT.DS."log".DS);
 
+/**
+ *  存放各种lib文件的路径
+ */
+define("LIBDIR",ROOT.DS."message".DS."lib".DS);
+
 //require file
 require_once("safe.php");
 require_once("message/message_factory.php");

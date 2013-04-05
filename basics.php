@@ -58,4 +58,21 @@ function getClassDir( $class_name ){
 	return compact("dir", "file_name");
 }
 
+/**
+ * 自动load lib的类
+ * @param string $lib_name : lib的文件名
+ * @example : loadLib("quishi")
+ * @version 1.0
+ * @author kerwin
+ */
+function loadLib($lib_name) {
+	$class_dir = LIBDIR.$lib_name.".php";
+	if( file_exists($class_dir)) {
+		require_once($class_dir);
+	} else {
+		// 需要记录log
+	}
+}
+
+
 ?>
