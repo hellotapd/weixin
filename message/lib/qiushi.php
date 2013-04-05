@@ -17,6 +17,7 @@ class Qiushi {
 		curl_close($ch);
 		if( $curl_errno ) {
 			//error 计log
+		debug($curl_errno);
 			$this->content = $this->get_default_content();
 			return false;
 		}
@@ -32,8 +33,8 @@ class Qiushi {
 
 	function get_qiushi() {
 		$count = count($this->content);
-		$rand = rand(0,$count);
-		return $this->content[$rand];
+		$rand = rand(0,$count-1);
+		return strip_tags($this->content[$rand]);
 	}
 
 
