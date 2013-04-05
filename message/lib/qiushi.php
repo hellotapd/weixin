@@ -12,6 +12,7 @@ class Qiushi {
 		curl_setopt($ch, CURLOPT_URL, $this->url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
 		curl_setopt($ch, CURLOPT_TIMEOUT_MS, 2000);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$content = curl_exec($ch);
 		$curl_errno = curl_errno($ch);
 		curl_close($ch);
@@ -33,7 +34,7 @@ class Qiushi {
 	function get_qiushi() {
 		$count = count($this->content);
 		$rand = rand(0,$count-1);
-		return strip_tags($this->content[$rand]);
+		return strip_tags($this->content[$rand])."(内容来源--糗事百科)";
 	}
 
 
