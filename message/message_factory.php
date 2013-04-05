@@ -11,18 +11,28 @@ class MessageFactory{
 
 
 	static function _get_class_name($keyword) {
-		$messageObj = "TextDefault";
-		if( $keyword == "detail") {
-			$messageObj = "TextDetail";
-		} else if( $keyword == "update") {
-			$messageObj = "TextUpdate";
-		} else if( $keyword == 'girl') {
-			$messageObj = "PicGirl";
-		} else if( strpos($keyword, "笑话") ||strpos($keyword, "糗事") || strpos($keyword, "xh") !== FALSE ) {
-			$messageObj = "TextQiushi";
+		$default = "TextDefault";
+		$key_map = self:: _key_word_map();
+		foreach ($key_map as $mobj => $keys) {
+			foreach ($keys as $key ) {
+				if( strpos($keyword, $key) !== FALSE) {
+					return $mobj;
+				}
+			}
 		}
-		return $messageObj;
+		return $default;
 	}
+
+	static function _key_word_map() {
+		$map = array(
+			'TextDetail' => array("detail"),
+			'TextQiushi' => array("笑话","糗事","xh"),
+			'PicGirl' => array("美女","girl", "图片")
+
+		);
+		return $map;
+	}
+
 
 
 }
