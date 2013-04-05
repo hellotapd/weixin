@@ -11,13 +11,12 @@ class Qiushi {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this->url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
-		curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
+		curl_setopt($ch, CURLOPT_TIMEOUT_MS, 2000);
 		$content = curl_exec($ch);
 		$curl_errno = curl_errno($ch);
 		curl_close($ch);
 		if( $curl_errno ) {
 			//error 计log
-		debug($curl_errno);
 			$this->content = $this->get_default_content();
 			return false;
 		}
