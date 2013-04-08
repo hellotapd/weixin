@@ -51,7 +51,7 @@
 					%s，%s  
 					后天天气：%s  
 					%s，%s";   
-		        $contentStr = sprintf($contentTpl, $weatherinfo['city'], $weatherinfo['city_en'],   
+		        $content_str = sprintf($contentTpl, $weatherinfo['city'], $weatherinfo['city_en'],   
 		            $weatherinfo['date_y'], $weatherinfo['week'], $weatherinfo['fchh'], $weatherinfo['temp1'],   
 		            $weatherinfo['weather1'], $weatherinfo['wind1'], $weatherinfo['index_d'], $weatherinfo['index_uv'],   
 		            $weatherinfo['index_xc'], $weatherinfo['temp2'], $weatherinfo['weather2'], $weatherinfo['wind2'],   
@@ -114,7 +114,7 @@
 	     * 针对北京市只有各个区的查询，需要特殊处理、默认为海淀
 	     * @作者：@andycwang   
 	     * @city 地区名称、城市拼音     
-	     * @return xml    
+	     * @return string    
 	    */     
 	    function handle_city($city = '') {
 	    	$ret_city = '';
@@ -125,13 +125,5 @@
 	    }
 
 	}
-
-
-	$city = !empty($_GET['city'])?$_GET['city']:'beijing';
-	$weather = new Weather();
-	$city_weather =  $weather->inquire_city_weather_str($city);
-	echo $city_weather;
-	$city_weather =  $weather->inquire_city_weather_json($city);
-	echo $city_weather;
 
 ?>
