@@ -203,8 +203,63 @@
 	     * @weather_arr 天气内容数组
 	     * @return string    比较通顺的天气预报语句
 	    */  
-	    function handel_weather_report_str() {
-
+	    function handel_weather_report_str($weather_arr) {
+	    	$weather_report_str = '';
+	    	foreach ($weather_arr as $key => $value) {
+	    		switch ($key) {
+	    			case 'city':
+	    				$weather_report_str .= '地点：'.$value.' ';
+	    				break;
+	    			case 'city_en':
+	    				$weather_report_str .= '地点拼音：'.$value.' ';
+	    				break;
+	    			case 'date_y':
+	    				$weather_report_str .= '日期：'.$value.' ';
+	    				break;	    
+	    			case 'week':
+	    				$weather_report_str .= '星期：'.$value.' ';
+	    				break;
+	    			case 'temp1':
+	    				$weather_report_str .= '气温：'.$value.' ';
+	    				break;
+	    			case 'weather1':
+	    				$weather_report_str .= '天气详情：'.$value.' ';
+	    				break;
+	    			case 'wind1':
+	    				$weather_report_str .= '风力：'.$value.' ';
+	    				break;
+	    			case 'index':
+	    				$weather_report_str .= '天气'.$value.' ';
+	    				break;
+	    			case 'index_d':
+	    				$weather_report_str .= '穿衣指数：'.$value.' ';
+	    				break;
+	    			case 'index_uv':
+	    				$weather_report_str .= '紫外线指数：'.$value.' ';
+	    				break;
+	    			case 'index_xc':
+	    				$weather_report_str .= $value.'洗车 ';
+	    				break;
+	    			case 'index_tr':
+	    				$weather_report_str .= $value.'旅行 ';
+	    				break;	
+	    			case 'index_co':
+	    				$weather_report_str .= '舒适度：'.$value.' ';
+	    				break;	
+	    			case 'index_cl':
+	    				$weather_report_str .= $value.'晨练 ';
+	    				break;		
+	    			case 'index_ls':
+	    				$weather_report_str .= $value.'晾晒 ';
+	    				break;		
+	    			case 'index_ag':
+	    				$weather_report_str .= $value.'过敏 ';
+	    				break;					
+	    			default:
+	    				break;
+	    		}
+	    	}
+	    	return $weather_report_str;
 	    }
 
 	   	/**
@@ -214,8 +269,19 @@
 	     * @weather_fields_arr 设置要显示的域
 	     * @return array 返回经过筛选的天气数组
 	    */  
-	    function set_use_fields() {
-
+	    function set_used_weather_field_array($weather_arr, $weather_fields_key_arr ) {
+	    	$used_weather_field_array = array();
+	    	// foreach ($weather_arr as $key => $value) {
+	    	// 	if(in_array($key, $weather_fields_key_arr)) {
+	    	// 		$used_weather_field_array = array_merge($used_weather_field_array,array($key => $value));
+	    	// 	}	
+	    	// }
+			foreach ($weather_fields_key_arr as $key => $value) {
+				if(!empty($weather_arr[$value])) {
+					$used_weather_field_array = array_merge($used_weather_field_array,array($value => $weather_arr[$value]));
+				}
+			}
+			return $used_weather_field_array;
 	    }
 
 	//     	$weather_key_array = array(
