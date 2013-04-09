@@ -14,8 +14,8 @@ class TextDefault extends TextMessage{
 		$city = !empty($keyword)?$keyword:'shenzhen';
 		$weather = new Weather();
 		$city_weather =  $weather->inquire_city_weather_str($city);
-
-		return "Hello {$current_user},the time is {$now}, Welcome to tapd~~your keyword is \"{$keyword}\"~ ".$city_weather;
+		return $city_weather;
+		return "Hello {$current_user},the time is {$now}, Welcome to tapd~~your keyword is \"{$keyword}\"~ ";
 	}
 
 }
