@@ -178,7 +178,7 @@
 	    		'时间' => array('date_y','week'),
 	    		'气温' => array('temp1'),
 	    		'天气描述' => array('weather1'),
-	    		'穿衣' => array('index'， 'index_d'),
+	    		'穿衣' => array('index','index_d'),
 	    		'风速' => array('wind1'),
 	    		'紫外线' => array('index_uv'),
 	    		'洗车' => array('index_xc'),
