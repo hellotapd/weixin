@@ -188,7 +188,7 @@
 	    		'晾晒' => array('index_ls'),
 	    		'过敏' => array('index_ag'),
 	    		'天气' => array('city', 'date_y', 'week', 'temp1','weather1','wind1','index','index_d','index_uv', 'index_xc', 'index_tr',
-	    			'index_co', 'index_cl', 'index_ls', 'index_ag');
+	    			'index_co', 'index_cl', 'index_ls', 'index_ag')
 	    		);
 	    	if(!empty($weather_key_array[$key])) {
 	    		return $weather_key_array[$key];
