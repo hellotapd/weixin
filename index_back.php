@@ -6,6 +6,7 @@
 //define your token
 define("TOKEN", "hellotapd1357");
 $wechatObj = new wechatCallbackapiTest();
+require_once("/var/www/weixin/message/lib/weather/weather.php");
 // $wechatObj->valid();
 $wechatObj->responseMsg();
 
@@ -47,6 +48,14 @@ class wechatCallbackapiTest
                 {
               		$msgType = "text";
                 	$contentStr = "Hello {$toUsername}, Welcome to tapd~~your keyword is \"{$keyword}\"~ {$time}";
+
+                    //根据城市获取天气仅作test用
+                    $city = !empty($keyword)?$keyword:'shenzhen';
+                    $weather = new Weather();
+                    $city_weather =  $weather->inquire_city_weather_str($city);
+                    $contentStr = $city_weather;//仅作test用
+
+
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
