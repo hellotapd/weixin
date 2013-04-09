@@ -1,9 +1,13 @@
 <?php
 // require_once("../core.php");
+require_once("lib/keywords/SplitWords.php");
 class MessageFactory{
 	static function init($post_data) {
 		$postObj = simplexml_load_string($post_data, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $keyword = trim($postObj->Content);	
+        //$keyword = trim($postObj->Content);
+        $split = new SplitWords();
+        $keyword = $split->RunRMM($postObj->Content);
+        $keyword = implode('; ', $keyword);
         $clas_name = self::_get_class_name($keyword);
         loadMessage($clas_name);
         return new $clas_name($postObj);
