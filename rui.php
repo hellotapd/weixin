@@ -4,4 +4,5 @@
 	TapdLog::instance()->write_log('ddddddddddddd');
 
 	var_dump(DB::instance());
+	print_r('ddddddddddddddddddddddddd');
 ?>
