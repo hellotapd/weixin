@@ -19,7 +19,7 @@ class TapdLog{
 	static public $WARN = 2;
 
 	// log级别：error, 用于记录所有的异常情况
-	static public $ERROR = 3;
+	static public $ERROR = 3; 
 
 	private $log_file = null;
 
