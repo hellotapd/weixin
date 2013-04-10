@@ -68,5 +68,6 @@ require_once("message/pic_message.php");
 require_once("message/text_message.php");
 require_once("log.php");
 require_once("log/tapd_log.php");
+require_once("message/lib/DB.php");
 require_once("basics.php");
 ?>
