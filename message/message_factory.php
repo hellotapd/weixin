@@ -16,7 +16,6 @@ class MessageFactory{
         $clas_name = self::_get_class_name($keyword);
         loadMessage($clas_name);
         return new $clas_name($postObj);
-        }
     }
 
 
