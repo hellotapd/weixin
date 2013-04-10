@@ -37,7 +37,7 @@ class TapdLog{
 		}
 		
 	}
-
+ 
 	private function __clone(){}
 
 	/**
