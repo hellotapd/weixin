@@ -33,7 +33,7 @@ class DB extends PDO{
 					throw new Exception("配置文件配置项缺失", 1);					
 				}
 				$dsn = "mysql:host=" . $ini_array['host'] . ";dbname=" . $ini_array['database'];
-				self::$db_instance = new DB($dsn, $ini_array['username '], $ini_array['password']);
+				self::$db_instance = new DB($dsn, $ini_array['username'], $ini_array['password']);
 			}catch(PDOException $err){
 				var_dump($err->getMessage());	 			
 			}			
