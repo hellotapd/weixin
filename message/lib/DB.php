@@ -35,7 +35,7 @@ class DB extends PDO{
 				$dsn = "mysql:host=" . $ini_array['host'] . ";dbname=" . $ini_array['database'];
 				self::$db_instance = new DB($dsn, $ini_array['username '], $ini_array['password']);
 			}catch(PDOException $err){
-				var_dump($err->getMessage());				
+				var_dump($err->getMessage());	 			
 			}			
 		}
 		return self::$db_instance;
