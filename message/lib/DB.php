@@ -28,16 +28,12 @@ class DB extends PDO{
 	static public function instance(){
 		if(!(self::$db_instance instanceof DB)){
 			$ini_array = parse_ini_file("db.ini");
-
-			print_r($ini_array);
-
-			$dsn = 'mysql:host=localhost;dbname=test';
 			try{
-				if(!isset($ini_array['host']) || !isset($ini_array['database']) || !isset($ini_array['username ']) || !isset($ini_array['password'])){
-					throw new Exception("Error Processing Request", 1);					
+				if(!isset($ini_array['host']) || !isset($ini_array['database']) || !isset($ini_array['username']) || !isset($ini_array['password'])){
+					throw new Exception("配置文件配置项缺失", 1);					
 				}
-				$dsn = 'mysql:host=localhost;dbname=test';
-				self::$db_instance = new DB($dsn, 'root', '^root@ifxoxO');
+				$dsn = "mysql:host=" . $ini_array['host'] . ";dbname=" . $ini_array['database'];
+				self::$db_instance = new DB($dsn, $ini_array['username '], $ini_array['password']);
 			}catch(PDOException $err){
 				var_dump($err->getMessage());				
 			}			
